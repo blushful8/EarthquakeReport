@@ -1,6 +1,7 @@
 package com.earthquakereport.cloud.mapper
 
 import android.util.Log
+import com.earthquakereport.data.model.EarthquakeData
 import com.earthquakereport.data.model.EarthquakeReportData
 import com.earthquakereport.domain.model.EarthquakeDomain
 
@@ -19,6 +20,5 @@ interface ToEarthquakeDomainMapper {
             Log.d("blushful1", earthquakeReportData.toString())
             return emptyList()
         }
-
     }
 }

@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.Main).launch {
             Log.d("blushful", viewModel.getEarthquakeList().toString())
+
         }
     }
 

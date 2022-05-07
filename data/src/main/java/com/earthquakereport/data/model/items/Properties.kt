@@ -1,20 +1,19 @@
-package com.earthquakereport.data.model
+package com.earthquakereport.data.model.items
 
-
-data class EarthquakeData(
+data class Properties(
     val alert: Any,
     val cdi: Any,
     val code: String,
     val detail: String,
-    val dmin: Double,
+    val dmin: Any,
     val felt: Any,
-    val gap: Double,
+    val gap: Any,
     val ids: String,
-    val mag: Double,
+    val mag: Float,
     val magType: String,
     val mmi: Any,
     val net: String,
-    val nst: Int,
+    val nst: Any,
     val place: String,
     val rms: Double,
     val sig: Int,

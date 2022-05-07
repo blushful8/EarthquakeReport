@@ -14,7 +14,6 @@ class BaseRepository(
         val earthquakeReportData = cloudDataSource.getEarthquakeReportData()
         return if (earthquakeReportData != null) {
             val listOfEarthquakeDomain = toEarthquakeDomainMapper.map(earthquakeReportData)
-
             listOfEarthquakeDomain
         } else {
             emptyList()

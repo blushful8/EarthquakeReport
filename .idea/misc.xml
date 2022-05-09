@@ -4,7 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kotlin/Earthquakereport/app/src/main/res/layout/activity_main.xml" value="0.359375" />
-        <entry key="..\:/Kotlin/Earthquakereport/app/src/main/res/layout/earthquake_item.xml" value="0.359375" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/round_layout.xml" value="0.2085" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/round_magenta.xml" value="0.2085" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/round_red.xml" value="0.2085" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/round_silver.xml" value="0.1945" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/drawable/round_yellow.xml" value="0.2085" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/layout/earthquake_item.xml" value="0.33" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1945" />
+        <entry key="..\:/Kotlin_projects/EarthquakeReport/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1945" />
       </map>
     </option>
   </component>

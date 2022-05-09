@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Earthquake report</string>
+    <string name="app_name">Earthquake Report</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="mag">mag</string>
     <string name="place">place</string>

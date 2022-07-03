@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
             val adapter = EarthquakeAdapter(
                 viewModel.getEarthquakeList()
             )
+            Log.d("blushful1", viewModel.getEarthquakeList().toString())
             recyclerView.adapter = adapter
-
         }
     }
 }

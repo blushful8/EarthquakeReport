@@ -1,7 +1,7 @@
-package com.earthquakereport.cloud
+package com.earthquakereport.data.cloud
 
 import android.util.Log
-import com.earthquakereport.cloud.api.RetrofitInstance
+import com.earthquakereport.data.cloud.api.RetrofitInstance
 import com.earthquakereport.data.model.EarthquakeReportData
 
 interface CloudDataSource {

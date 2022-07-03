@@ -1,4 +1,4 @@
-package com.earthquakereport.cloud.api
+package com.earthquakereport.data.cloud.api
 
 import com.earthquakereport.data.model.EarthquakeReportData
 import retrofit2.Response

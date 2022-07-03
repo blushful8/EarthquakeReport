@@ -1,7 +1,7 @@
 package com.earthquakereport.presentation.di
 
-import com.earthquakereport.cloud.CloudDataSource
-import com.earthquakereport.cloud.mapper.ToEarthquakeDomainMapper
+import com.earthquakereport.data.cloud.CloudDataSource
+import com.earthquakereport.data.cloud.mapper.ToEarthquakeDomainMapper
 import com.earthquakereport.data.repository.BaseRepository
 import com.earthquakereport.domain.Repository
 import dagger.Module

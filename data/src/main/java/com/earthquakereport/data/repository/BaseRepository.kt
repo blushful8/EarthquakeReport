@@ -1,7 +1,7 @@
 package com.earthquakereport.data.repository
 
-import com.earthquakereport.cloud.CloudDataSource
-import com.earthquakereport.cloud.mapper.ToEarthquakeDomainMapper
+import com.earthquakereport.data.cloud.CloudDataSource
+import com.earthquakereport.data.cloud.mapper.ToEarthquakeDomainMapper
 import com.earthquakereport.domain.Repository
 import com.earthquakereport.domain.model.EarthquakeDomain
 

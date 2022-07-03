@@ -1,4 +1,4 @@
-package com.earthquakereport.cloud.mapper
+package com.earthquakereport.data.cloud.mapper
 
 import com.earthquakereport.data.model.EarthquakeReportData
 import com.earthquakereport.domain.model.EarthquakeDomain

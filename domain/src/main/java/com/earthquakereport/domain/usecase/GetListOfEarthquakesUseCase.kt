@@ -4,11 +4,11 @@ import com.earthquakereport.domain.Repository
 import com.earthquakereport.domain.model.EarthquakeDomain
 
 interface GetListOfEarthquakesUseCase {
-   suspend fun execute(): List<EarthquakeDomain>
+   suspend fun execute(checkFirstOpen: Boolean): List<EarthquakeDomain>
 
     class Base(private val repository: Repository): GetListOfEarthquakesUseCase {
-        override suspend fun execute(): List<EarthquakeDomain> {
-            return repository.getEarthquakeReport()
+        override suspend fun execute(checkFirstOpen: Boolean): List<EarthquakeDomain> {
+            return repository.getEarthquakeReport(checkFirstOpen)
         }
     }
 }

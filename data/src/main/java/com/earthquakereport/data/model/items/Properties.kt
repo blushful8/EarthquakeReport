@@ -14,7 +14,7 @@ data class Properties(
     val mmi: Any,
     val net: String,
     val nst: Any,
-    val place: String,
+    val place: String? = null,
     val rms: Double,
     val sig: Int,
     val sources: String,

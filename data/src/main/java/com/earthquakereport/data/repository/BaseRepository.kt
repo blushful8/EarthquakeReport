@@ -9,15 +9,18 @@ class BaseRepository(
     private val cloudDataSource: CloudDataSource,
     private val toEarthquakeDomainMapper: ToEarthquakeDomainMapper
 ) : Repository {
-
-    override suspend fun getEarthquakeReport(): List<EarthquakeDomain> {
+    override suspend fun getEarthquakeReport(checkFirstOpen: Boolean): List<EarthquakeDomain> {
         val earthquakeReportData = cloudDataSource.getEarthquakeReportData()
-        return if (earthquakeReportData != null) {
-            val listOfEarthquakeDomain = toEarthquakeDomainMapper.map(earthquakeReportData)
-            listOfEarthquakeDomain
+        return if (checkFirstOpen) {
+            toEarthquakeDomainMapper.map(
+                earthquakeReportData,
+                checkFirstOpen
+            )
         } else {
-            emptyList()
+            toEarthquakeDomainMapper.map(
+                null,
+                checkFirstOpen
+            )
         }
     }
-
 }

@@ -5,4 +5,12 @@
     <string name="place">place</string>
     <string name="time">time</string>
     <string name="url">url</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="swipe">Swipe</string>
+    <string name="error_loading_please_enable_internet">Error loading</string>
+    <string name="settings">Settings</string>
+    <string name="font_style">Font style</string>
+    <string name="text_color">Text color</string>
+    <string name="color_top_field">Color top field</string>
 </resources>

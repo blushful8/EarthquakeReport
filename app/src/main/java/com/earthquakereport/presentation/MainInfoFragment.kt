@@ -60,19 +60,19 @@ class MainInfoFragment : Fragment() {
 
     private fun setTextColor() {
         val textColor = appStorageOpen.getTextColor()
-        errorTextView.setTextColor(CustomParser.parseColor(textColor))
-        appTextView.setTextColor(CustomParser.parseColor(textColor))
+        errorTextView.setTextColor(Parser.parseColor(textColor))
+        appTextView.setTextColor(Parser.parseColor(textColor))
     }
 
     private fun setTextFontStyle() {
         val textFontStyle = appStorageOpen.getFontStyle()
-        CustomParser.setFontFamily(errorTextView, requireActivity(), textFontStyle)
-        CustomParser.setFontFamily(appTextView, requireActivity(), textFontStyle)
+        Parser.setFontFamily(errorTextView, requireActivity(), textFontStyle)
+        Parser.setFontFamily(appTextView, requireActivity(), textFontStyle)
     }
 
     private fun setTopColor() {
         val topColor = appStorageOpen.getTopFieldColor()
-        linearLayout.setBackgroundColor(CustomParser.parseColor(topColor))
+        linearLayout.setBackgroundColor(Parser.parseColor(topColor))
     }
 
     private fun setRecycler(recyclerView: RecyclerView) {

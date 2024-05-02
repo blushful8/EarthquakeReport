@@ -65,23 +65,23 @@ class SettingsFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     private fun setTopColor() {
         val topColor = appStorageOpen.getTopFieldColor()
-        linearLayout.setBackgroundColor(CustomParser.parseColor(topColor))
+        linearLayout.setBackgroundColor(Parser.parseColor(topColor))
     }
 
     private fun setFontStyle() {
         val style = appStorageOpen.getFontStyle()
-        CustomParser.setFontFamily(textViewColorText, requireActivity(), style)
-        CustomParser.setFontFamily(textViewFontFamily, requireActivity(), style)
-        CustomParser.setFontFamily(textViewFieldTopColor, requireActivity(), style)
-        CustomParser.setFontFamily(textSettingsView, requireActivity(), style)
+        Parser.setFontFamily(textViewColorText, requireActivity(), style)
+        Parser.setFontFamily(textViewFontFamily, requireActivity(), style)
+        Parser.setFontFamily(textViewFieldTopColor, requireActivity(), style)
+        Parser.setFontFamily(textSettingsView, requireActivity(), style)
     }
 
     private fun setTextColor() {
         val textColor = appStorageOpen.getTextColor()
-        textViewColorText.setTextColor(CustomParser.parseColor(textColor))
-        textViewFontFamily.setTextColor(CustomParser.parseColor(textColor))
-        textViewFieldTopColor.setTextColor(CustomParser.parseColor(textColor))
-        textSettingsView.setTextColor(CustomParser.parseColor(textColor))
+        textViewColorText.setTextColor(Parser.parseColor(textColor))
+        textViewFontFamily.setTextColor(Parser.parseColor(textColor))
+        textViewFieldTopColor.setTextColor(Parser.parseColor(textColor))
+        textSettingsView.setTextColor(Parser.parseColor(textColor))
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {

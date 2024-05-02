@@ -9,7 +9,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.earthquakereport.earthquakereport.R
 
 
-object CustomParser {
+object Parser {
     private const val red = "#D51831"
     private const val blue = "#8713E1"
     private const val black = "#000000"

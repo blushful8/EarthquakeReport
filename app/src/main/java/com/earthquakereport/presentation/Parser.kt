@@ -18,11 +18,6 @@ object Parser {
 
 
     fun parseColor(value: Int): Int {
-        // 0 -> yellow
-        // 1 -> red
-        // 2 -> blue
-        // 3 -> purple
-        // 4 -> black
         var defaultColor = Color.parseColor(black)
         when (value) {
             0 -> defaultColor = Color.parseColor(yellow)
@@ -35,12 +30,6 @@ object Parser {
     }
 
     fun setFontFamily(textView: TextView, activity: Activity, value: Int) {
-        //or to support all versions use
-        //or to support all versions use
-        // 0 -> adventuro
-        // 1 -> bearsdsons
-        // 2 -> milky boba
-        // 3 -> reach story
         val typeface: Typeface? = when (value) {
             0 -> ResourcesCompat.getFont(activity, R.font.adventuro)
             1 -> ResourcesCompat.getFont(activity, R.font.beardsons)

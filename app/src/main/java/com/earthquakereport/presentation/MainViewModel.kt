@@ -1,5 +1,6 @@
 package com.earthquakereport.presentation
 
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.earthquakereport.domain.model.EarthquakeDomain
@@ -14,12 +15,13 @@ class MainViewModel @Inject constructor(
     private val getListOfEarthquakesUseCase: GetListOfEarthquakesUseCase
 ) : ViewModel() {
    fun getEarthquakeList(
-        checkFirstOpen: Boolean,
-        onResult: (List<EarthquakeDomain>) -> Unit
+       block: (List<EarthquakeDomain>) -> Unit
     ) {
         viewModelScope.launch(Dispatchers.Main) {
-            val result = getListOfEarthquakesUseCase.execute(checkFirstOpen)
-            onResult.invoke(result)
+            val result = getListOfEarthquakesUseCase.execute(false)
+            block.invoke(result)
         }
     }
+
+
 }

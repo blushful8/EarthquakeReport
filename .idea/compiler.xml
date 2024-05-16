@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
-      <module name="Earthquake_report.app" target="17" />
-      <module name="Earthquake_report.data" target="17" />
-    </bytecodeTargetLevel>
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations-processor/4.0.0/2eb03078a438e49d282536302246f3fc2cb3ca28/realm-annotations-processor-4.0.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/81241ff7078ef14f42ea2a8995fa09c096256e6b/javawriter-2.5.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.realm/realm-annotations/4.0.0/3f437353beb10bc66da2d15fcbc30649ea392e2b/realm-annotations-4.0.0.jar" />
+        </processorPath>
+        <module name="Earthquake_report.domain.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>

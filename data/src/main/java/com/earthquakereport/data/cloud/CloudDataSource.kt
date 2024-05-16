@@ -1,7 +1,8 @@
 package com.earthquakereport.data.cloud
 
+
 import com.earthquakereport.data.cloud.api.RetrofitInstance
-import com.earthquakereport.data.model.EarthquakeReportData
+import com.earthquakereport.data.model.earhquakedata.EarthquakeReportData
 
 interface CloudDataSource {
 

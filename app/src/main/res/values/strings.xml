@@ -13,4 +13,20 @@
     <string name="font_style">Font style</string>
     <string name="text_color">Text color</string>
     <string name="color_top_field">Color top field</string>
+    <string name="imageview_font">ImageView font</string>
+    <string name="imageview_text_color">ImageView text color</string>
+    <string name="imageview_notifications">ImageView notifications</string>
+    <string name="notifications">Notifications</string>
+    <string name="customize_the_text_color_to_suit_your_needs">Customize the text color to suit your needs</string>
+    <string name="customize_the_color_of_the_top_margin_to_suit_your_needs">Customize the color of the top margin to suit your needs</string>
+    <string name="control_notifications_on_your_phone">Control earthquake notifications on your phone</string>
+    <string name="choose_your_favorite_font_from_the_available_ones">Choose your favorite font from the available ones</string>
+
+
+    <string-array name="fontNames">
+        <item>Adventuro</item>
+        <item>Beard Sons</item>
+        <item>Milky</item>
+        <item>Reach Story</item>
+    </string-array>
 </resources>

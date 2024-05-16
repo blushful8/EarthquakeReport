@@ -1,15 +1,14 @@
 package com.earthquakereport.presentation
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.earthquakereport.R
+import com.earthquakereport.databinding.EarthquakeItemBinding
 import com.earthquakereport.domain.model.EarthquakeDomain
-import com.earthquakereport.earthquakereport.R
-import com.earthquakereport.earthquakereport.databinding.EarthquakeItemBinding
 import com.earthquakereport.presentation.core.Clickable
 import com.earthquakereport.presentation.core.Settable
 import java.util.*
@@ -17,8 +16,7 @@ import java.util.*
 
 class EarthquakeAdapter(
     private val earthquakeList: List<EarthquakeDomain>,
-    private val appStorageOpen: AppStorageOpen,
-    private val activity: Activity
+    private val earthquakeStorage: EarthquakeStorage
 ) :
     RecyclerView.Adapter<EarthquakeAdapter.EarthquakeViewHolder>(), Settable, Clickable {
 
@@ -38,12 +36,14 @@ class EarthquakeAdapter(
         val sdf = java.text.SimpleDateFormat("yyyy-MM-dd, HH:mm:ss", Locale.ENGLISH)
         val date = Date(time!!)
 
-        val fontStyle = appStorageOpen.getFontStyle()
-        val textColor = appStorageOpen.getTextColor()
+
         holder.binding.mag.text = String.format("%.1f", mag)
         holder.binding.place.text = earthquakeList[position].place?.replace("?", "a")
-        holder.binding.place.setTextColor(Parser.parseColor(textColor))
-        Parser.setFontFamily(holder.binding.place, activity, fontStyle)
+
+
+        UISetter.setFontStyle(earthquakeStorage, holder.binding.place)
+        UISetter.setTextColor(earthquakeStorage, holder.binding.place)
+
         holder.binding.time.text = sdf.format(date)
         setBackgroundColor(mag = mag!!, holder = holder)
         clickableItemView(holder = holder, position = position)

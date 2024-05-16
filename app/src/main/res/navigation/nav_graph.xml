@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainInfoFragment"
-        android:name="com.earthquakereport.presentation.MainInfoFragment"
+        android:name="com.earthquakereport.presentation.EarthquakeMainFragment"
         android:label="fragment_main_info"
-        tools:layout="@layout/fragment_main_info" >
+        tools:layout="@layout/fragment_earthquake_info" >
         <action
             android:id="@+id/action_mainInfoFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />

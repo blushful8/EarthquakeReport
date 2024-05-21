@@ -18,6 +18,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.earthquakereport.presentation.UISetter.setFontStyle
@@ -240,6 +241,8 @@ class SettingsFragment : Fragment() {
                     ) {
                         startActivity(intent)
                         unrestrictedBatteryOptimization()
+
+                        earthquakeStorage.savePermission(true)
                         break
                     }
             }
@@ -247,6 +250,12 @@ class SettingsFragment : Fragment() {
                 ?: com.earthquakereport.R.drawable.baseline_notifications_active_24)
         }
 
+        requireActivity().onBackPressedDispatcher.addCallback(object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                findNavController().popBackStack()
+            }
+
+        })
     }
 
     @SuppressLint("BatteryLife")
@@ -259,7 +268,6 @@ class SettingsFragment : Fragment() {
             intent.data = Uri.parse("package:${requireActivity().packageName}")
 
             startActivity(intent)
-            earthquakeStorage.savePermission(true)
         }
     }
 

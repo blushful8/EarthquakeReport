@@ -9,18 +9,22 @@
         android:id="@+id/mainInfoFragment"
         android:name="com.earthquakereport.presentation.EarthquakeMainFragment"
         android:label="fragment_main_info"
-        tools:layout="@layout/fragment_earthquake_info" >
+        tools:layout="@layout/fragment_earthquake_main" >
         <action
             android:id="@+id/action_mainInfoFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainInfoFragment_to_earthquakeInfoFragment2"
+            app:destination="@id/earthquakeInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.earthquakereport.presentation.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
-        <action
-            android:id="@+id/action_settingsFragment_to_mainInfoFragment"
-            app:destination="@id/mainInfoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/earthquakeInfoFragment"
+        android:name="com.earthquakereport.presentation.EarthquakeInfoFragment"
+        android:label="fragment_earthquake_info"
+        tools:layout="@layout/fragment_earthquake_info" />
 </navigation>

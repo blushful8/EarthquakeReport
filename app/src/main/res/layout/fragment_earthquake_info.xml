@@ -1,14 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".presentation.EarthquakeInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:background="#B7304FFE"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/go_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back"
+            android:contentDescription="@string/imageview_go_back" />
+
+        <ImageView
+            android:contentDescription="@string/imageview_app_icon"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:src="@mipmap/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/text_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:text="@string/info"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#998C8383"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Earthquake Safety Tips Header -->
+            <TextView
+                android:id="@+id/earthquakeTipsHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/earthquake_tips_header"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 1 -->
+            <TextView
+                android:id="@+id/tip1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip1"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 2 -->
+            <TextView
+                android:id="@+id/tip2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip2"
+                android:textAlignment="textEnd"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 3 -->
+            <TextView
+                android:id="@+id/tip3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip3"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 4 -->
+            <TextView
+                android:id="@+id/tip4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip4"
+                android:textAlignment="textEnd"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 5 -->
+            <TextView
+                android:id="@+id/tip5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip5"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- Tip 6 -->
+            <TextView
+                android:id="@+id/tip6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="@string/tip6"
+                android:textAlignment="textEnd"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#C3C3C3" />
+            <!-- More Tips Button -->
+            <Button
+                android:id="@+id/moreTipsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF4081"
+                android:padding="10dp"
+                android:text="@string/more_tips"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

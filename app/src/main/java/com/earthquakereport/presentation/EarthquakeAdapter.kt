@@ -1,8 +1,6 @@
 package com.earthquakereport.presentation
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +14,8 @@ import java.util.*
 
 class EarthquakeAdapter(
     private val earthquakeList: List<EarthquakeDomain>,
-    private val earthquakeStorage: EarthquakeStorage
+    private val earthquakeStorage: EarthquakeStorage,
+    private val webViewBuilder: WebViewBuilder
 ) :
     RecyclerView.Adapter<EarthquakeAdapter.EarthquakeViewHolder>(), Settable, Clickable {
 
@@ -29,7 +28,7 @@ class EarthquakeAdapter(
         return EarthquakeViewHolder(itemBinding)
     }
 
-    @SuppressLint("NewApi")
+    @SuppressLint("NewApi", "DefaultLocale")
     override fun onBindViewHolder(holder: EarthquakeViewHolder, position: Int) {
         val mag = earthquakeList[position].mag
         val time = earthquakeList[position].time
@@ -66,10 +65,9 @@ class EarthquakeAdapter(
     }
 
     override fun clickableItemView(holder: EarthquakeViewHolder, position: Int) {
-        val i = Intent(Intent.ACTION_VIEW)
         holder.itemView.setOnClickListener {
-            i.data = Uri.parse(earthquakeList[position].url)
-            holder.itemView.context.startActivity(i)
+            webViewBuilder.createNewWebView(earthquakeList[position].url.toString())
+            webViewBuilder.customBackPressedListener()
         }
     }
 }

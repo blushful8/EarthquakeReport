@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -28,21 +30,24 @@ class EarthquakeMainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = inflater.inflate(R.layout.fragment_earthquake_info, container, false)
+    ): View = inflater.inflate(R.layout.fragment_earthquake_main, container, false)
 
     private lateinit var linearLayout: LinearLayout
     private lateinit var appTextView: TextView
     private lateinit var errorTextView: TextView
     private lateinit var earthquakeStorage: EarthquakeStorage
+    private lateinit var webViewBuilder: WebViewBuilder
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recView = view.findViewById<RecyclerView>(R.id.rec_view)
-        appTextView = view.findViewById(R.id.app_name)
+        appTextView = view.findViewById(R.id.tv_app_name)
         linearLayout = view.findViewById(R.id.linearLayout)
         errorTextView = view.findViewById(R.id.text_error)
         recView.layoutManager = LinearLayoutManager(requireContext())
         val swipe = view.findViewById<SwipeRefreshLayout>(R.id.swipe)
         earthquakeStorage = EarthquakeStorage(requireActivity())
         val switchToSettings = view.findViewById<ImageView>(R.id.arrow_go_setting)
+        val switchToInfo = view.findViewById<ImageView>(R.id.arrow_go_info)
+        webViewBuilder = WebViewBuilder(this, linearLayout.parent as ConstraintLayout)
 
         Hawk.init(requireContext()).build()
 
@@ -50,7 +55,9 @@ class EarthquakeMainFragment : Fragment() {
             findNavController().navigate(R.id.action_mainInfoFragment_to_settingsFragment)
         }
 
-
+        switchToInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_mainInfoFragment_to_earthquakeInfoFragment2)
+        }
 
         setRecycler(recView)
         swipe.setOnRefreshListener {
@@ -58,6 +65,12 @@ class EarthquakeMainFragment : Fragment() {
             swipe.isRefreshing = false
         }
 
+        requireActivity().onBackPressedDispatcher.addCallback(object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+
+        })
     }
 
 
@@ -72,7 +85,7 @@ class EarthquakeMainFragment : Fragment() {
         viewModel.getEarthquakeList { mutableList ->
 
             if (mutableList.isNotEmpty()) {
-                val adapter = EarthquakeAdapter(mutableList, earthquakeStorage)
+                val adapter = EarthquakeAdapter(mutableList, earthquakeStorage, webViewBuilder)
                 recyclerView.adapter = adapter
 
                 errorTextView.visibility = View.GONE

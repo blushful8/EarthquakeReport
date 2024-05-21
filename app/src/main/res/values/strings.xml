@@ -21,7 +21,18 @@
     <string name="customize_the_color_of_the_top_margin_to_suit_your_needs">Customize the color of the top margin to suit your needs</string>
     <string name="control_notifications_on_your_phone">Control earthquake notifications on your phone</string>
     <string name="choose_your_favorite_font_from_the_available_ones">Choose your favorite font from the available ones</string>
-
+    <string name="info">Info</string>
+    <string name="earthquake_tips_header">Earthquake Safety Tips</string>
+    <string name="tip1">If indoors, drop to the ground, take cover under sturdy furniture, and hold on until the shaking stops.</string>
+    <string name="tip2">If outdoors, move to an open area away from buildings, trees, streetlights, and utility wires.</string>
+    <string name="tip3">If in a vehicle, stop as quickly as safety permits and stay in the vehicle until the shaking stops.</string>
+    <string name="tip4">If in the kitchen, turn off the gas and electricity to prevent fires.</string>
+    <string name="tip5">Do not use elevators during or after the earthquake.</string>
+    <string name="tip6">Be prepared for aftershocks following the main earthquake.</string>
+    <string name="more_tips">More Tips</string>
+    <string name="back_button">Back</string>
+    <string name="imageview_go_back">ImageView go back</string>
+    <string name="imageview_app_icon">ImageView app icon</string>
 
     <string-array name="fontNames">
         <item>Adventuro</item>
